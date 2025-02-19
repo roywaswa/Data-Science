@@ -1,5 +1,12 @@
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
+parts:
+  - caption: Introduction
+    chapters:
+      - file: markdown
+      - file: notebooks
+  - caption: Chapter 01 GDP and Population Data
+    chapters:
+      - file: 01-gdp_population/index
+        sections:
+        - file: 01-gdp_population/gdp_rate
