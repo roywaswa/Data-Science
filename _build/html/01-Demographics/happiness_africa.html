@@ -1,0 +1,1212 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Happiness in Africa &#8212; My Data Science Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01-Demographics/happiness_africa';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Demographics Analysis and Visualization" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Data Science Book - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Data Science Book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to My Data Science Projects
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Content Notebooks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 01 Demographic Data</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Demographics Analysis and Visualization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Happiness in Africa</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/roywaswa/Data-Science" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/roywaswa/Data-Science/issues/new?title=Issue%20on%20page%20%2F01-Demographics/happiness_africa.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/01-Demographics/happiness_africa.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Happiness in Africa</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="happiness-in-africa">
+<h1>Happiness in Africa<a class="headerlink" href="#happiness-in-africa" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="c1"># Customize the style of the plots</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path_to_file</span> <span class="o">=</span> <span class="s1">&#39;./data/World-happiness-report-2024.csv&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_to_file</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Columns: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Shape: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Columns: Index([&#39;Country name&#39;, &#39;Regional indicator&#39;, &#39;Ladder score&#39;, &#39;upperwhisker&#39;,
+       &#39;lowerwhisker&#39;, &#39;Log GDP per capita&#39;, &#39;Social support&#39;,
+       &#39;Healthy life expectancy&#39;, &#39;Freedom to make life choices&#39;, &#39;Generosity&#39;,
+       &#39;Perceptions of corruption&#39;, &#39;Dystopia + residual&#39;],
+      dtype=&#39;object&#39;)
+Shape: (143, 12)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country name</th>
+      <th>Regional indicator</th>
+      <th>Ladder score</th>
+      <th>upperwhisker</th>
+      <th>lowerwhisker</th>
+      <th>Log GDP per capita</th>
+      <th>Social support</th>
+      <th>Healthy life expectancy</th>
+      <th>Freedom to make life choices</th>
+      <th>Generosity</th>
+      <th>Perceptions of corruption</th>
+      <th>Dystopia + residual</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Finland</td>
+      <td>Western Europe</td>
+      <td>7.741</td>
+      <td>7.815</td>
+      <td>7.667</td>
+      <td>1.844</td>
+      <td>1.572</td>
+      <td>0.695</td>
+      <td>0.859</td>
+      <td>0.142</td>
+      <td>0.546</td>
+      <td>2.082</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Denmark</td>
+      <td>Western Europe</td>
+      <td>7.583</td>
+      <td>7.665</td>
+      <td>7.500</td>
+      <td>1.908</td>
+      <td>1.520</td>
+      <td>0.699</td>
+      <td>0.823</td>
+      <td>0.204</td>
+      <td>0.548</td>
+      <td>1.881</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Iceland</td>
+      <td>Western Europe</td>
+      <td>7.525</td>
+      <td>7.618</td>
+      <td>7.433</td>
+      <td>1.881</td>
+      <td>1.617</td>
+      <td>0.718</td>
+      <td>0.819</td>
+      <td>0.258</td>
+      <td>0.182</td>
+      <td>2.050</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Sweden</td>
+      <td>Western Europe</td>
+      <td>7.344</td>
+      <td>7.422</td>
+      <td>7.267</td>
+      <td>1.878</td>
+      <td>1.501</td>
+      <td>0.724</td>
+      <td>0.838</td>
+      <td>0.221</td>
+      <td>0.524</td>
+      <td>1.658</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Israel</td>
+      <td>Middle East and North Africa</td>
+      <td>7.341</td>
+      <td>7.405</td>
+      <td>7.277</td>
+      <td>1.803</td>
+      <td>1.513</td>
+      <td>0.740</td>
+      <td>0.641</td>
+      <td>0.153</td>
+      <td>0.193</td>
+      <td>2.298</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ss_africa</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Regional indicator&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Sub-Saharan Africa&#39;</span><span class="p">]</span>
+<span class="n">ss_africa</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Healthy life expectancy&#39;</span><span class="p">,</span><span class="s1">&#39;Log GDP per capita&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country name</th>
+      <th>Regional indicator</th>
+      <th>Ladder score</th>
+      <th>upperwhisker</th>
+      <th>lowerwhisker</th>
+      <th>Log GDP per capita</th>
+      <th>Social support</th>
+      <th>Healthy life expectancy</th>
+      <th>Freedom to make life choices</th>
+      <th>Generosity</th>
+      <th>Perceptions of corruption</th>
+      <th>Dystopia + residual</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>69</th>
+      <td>Mauritius</td>
+      <td>Sub-Saharan Africa</td>
+      <td>5.816</td>
+      <td>5.927</td>
+      <td>5.706</td>
+      <td>1.570</td>
+      <td>1.358</td>
+      <td>0.490</td>
+      <td>0.641</td>
+      <td>0.123</td>
+      <td>0.118</td>
+      <td>1.517</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>Ethiopia</td>
+      <td>Sub-Saharan Africa</td>
+      <td>3.861</td>
+      <td>3.997</td>
+      <td>3.725</td>
+      <td>0.792</td>
+      <td>0.915</td>
+      <td>0.420</td>
+      <td>0.441</td>
+      <td>0.270</td>
+      <td>0.101</td>
+      <td>0.923</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>Mauritania</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.505</td>
+      <td>4.673</td>
+      <td>4.337</td>
+      <td>1.078</td>
+      <td>0.705</td>
+      <td>0.400</td>
+      <td>0.343</td>
+      <td>0.133</td>
+      <td>0.198</td>
+      <td>1.649</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Senegal</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.969</td>
+      <td>5.096</td>
+      <td>4.841</td>
+      <td>0.927</td>
+      <td>0.751</td>
+      <td>0.392</td>
+      <td>0.607</td>
+      <td>0.152</td>
+      <td>0.069</td>
+      <td>2.071</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>Tanzania</td>
+      <td>Sub-Saharan Africa</td>
+      <td>3.781</td>
+      <td>3.917</td>
+      <td>3.644</td>
+      <td>0.820</td>
+      <td>0.706</td>
+      <td>0.380</td>
+      <td>0.709</td>
+      <td>0.191</td>
+      <td>0.257</td>
+      <td>0.717</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>Uganda</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.372</td>
+      <td>4.501</td>
+      <td>4.243</td>
+      <td>0.772</td>
+      <td>1.151</td>
+      <td>0.373</td>
+      <td>0.587</td>
+      <td>0.178</td>
+      <td>0.054</td>
+      <td>1.256</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>Comoros</td>
+      <td>Sub-Saharan Africa</td>
+      <td>3.566</td>
+      <td>3.754</td>
+      <td>3.378</td>
+      <td>0.896</td>
+      <td>0.328</td>
+      <td>0.370</td>
+      <td>0.172</td>
+      <td>0.128</td>
+      <td>0.160</td>
+      <td>1.512</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>Ghana</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.289</td>
+      <td>4.396</td>
+      <td>4.182</td>
+      <td>1.077</td>
+      <td>0.747</td>
+      <td>0.360</td>
+      <td>0.623</td>
+      <td>0.183</td>
+      <td>0.028</td>
+      <td>1.273</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>Kenya</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.470</td>
+      <td>4.595</td>
+      <td>4.344</td>
+      <td>1.037</td>
+      <td>0.895</td>
+      <td>0.353</td>
+      <td>0.519</td>
+      <td>0.282</td>
+      <td>0.069</td>
+      <td>1.316</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>Malawi</td>
+      <td>Sub-Saharan Africa</td>
+      <td>3.421</td>
+      <td>3.561</td>
+      <td>3.281</td>
+      <td>0.617</td>
+      <td>0.410</td>
+      <td>0.349</td>
+      <td>0.571</td>
+      <td>0.135</td>
+      <td>0.136</td>
+      <td>1.203</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>Gabon</td>
+      <td>Sub-Saharan Africa</td>
+      <td>5.106</td>
+      <td>5.243</td>
+      <td>4.969</td>
+      <td>1.403</td>
+      <td>1.038</td>
+      <td>0.344</td>
+      <td>0.516</td>
+      <td>0.045</td>
+      <td>0.100</td>
+      <td>1.660</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>Madagascar</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.228</td>
+      <td>4.359</td>
+      <td>4.097</td>
+      <td>0.628</td>
+      <td>0.823</td>
+      <td>0.333</td>
+      <td>0.250</td>
+      <td>0.172</td>
+      <td>0.123</td>
+      <td>1.897</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>Gambia</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.485</td>
+      <td>4.625</td>
+      <td>4.344</td>
+      <td>0.750</td>
+      <td>0.684</td>
+      <td>0.330</td>
+      <td>0.459</td>
+      <td>0.324</td>
+      <td>0.048</td>
+      <td>1.890</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>South Africa</td>
+      <td>Sub-Saharan Africa</td>
+      <td>5.422</td>
+      <td>5.549</td>
+      <td>5.295</td>
+      <td>1.389</td>
+      <td>1.369</td>
+      <td>0.322</td>
+      <td>0.537</td>
+      <td>0.078</td>
+      <td>0.034</td>
+      <td>1.693</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>Togo</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.214</td>
+      <td>4.330</td>
+      <td>4.098</td>
+      <td>0.758</td>
+      <td>0.586</td>
+      <td>0.320</td>
+      <td>0.453</td>
+      <td>0.127</td>
+      <td>0.156</td>
+      <td>1.814</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>Namibia</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.832</td>
+      <td>4.958</td>
+      <td>4.705</td>
+      <td>1.266</td>
+      <td>1.212</td>
+      <td>0.307</td>
+      <td>0.470</td>
+      <td>0.069</td>
+      <td>0.061</td>
+      <td>1.446</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>Congo (Brazzaville)</td>
+      <td>Sub-Saharan Africa</td>
+      <td>5.221</td>
+      <td>5.396</td>
+      <td>5.047</td>
+      <td>0.892</td>
+      <td>0.622</td>
+      <td>0.306</td>
+      <td>0.523</td>
+      <td>0.124</td>
+      <td>0.138</td>
+      <td>2.617</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>Liberia</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.269</td>
+      <td>4.474</td>
+      <td>4.063</td>
+      <td>0.619</td>
+      <td>0.673</td>
+      <td>0.301</td>
+      <td>0.546</td>
+      <td>0.178</td>
+      <td>0.075</td>
+      <td>1.878</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>Niger</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.556</td>
+      <td>4.712</td>
+      <td>4.401</td>
+      <td>0.573</td>
+      <td>0.677</td>
+      <td>0.293</td>
+      <td>0.615</td>
+      <td>0.145</td>
+      <td>0.147</td>
+      <td>2.107</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Ivory Coast</td>
+      <td>Sub-Saharan Africa</td>
+      <td>5.080</td>
+      <td>5.224</td>
+      <td>4.936</td>
+      <td>1.080</td>
+      <td>0.578</td>
+      <td>0.288</td>
+      <td>0.547</td>
+      <td>0.120</td>
+      <td>0.164</td>
+      <td>2.303</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>Cameroon</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.874</td>
+      <td>4.996</td>
+      <td>4.753</td>
+      <td>0.943</td>
+      <td>0.856</td>
+      <td>0.288</td>
+      <td>0.521</td>
+      <td>0.126</td>
+      <td>0.060</td>
+      <td>2.080</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>Benin</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.377</td>
+      <td>4.510</td>
+      <td>4.245</td>
+      <td>0.914</td>
+      <td>0.128</td>
+      <td>0.284</td>
+      <td>0.567</td>
+      <td>0.112</td>
+      <td>0.252</td>
+      <td>2.121</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>Burkina Faso</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.548</td>
+      <td>4.686</td>
+      <td>4.410</td>
+      <td>0.756</td>
+      <td>0.685</td>
+      <td>0.274</td>
+      <td>0.483</td>
+      <td>0.173</td>
+      <td>0.179</td>
+      <td>1.999</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>Mali</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.232</td>
+      <td>4.347</td>
+      <td>4.117</td>
+      <td>0.747</td>
+      <td>0.688</td>
+      <td>0.267</td>
+      <td>0.586</td>
+      <td>0.120</td>
+      <td>0.090</td>
+      <td>1.734</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>Zambia</td>
+      <td>Sub-Saharan Africa</td>
+      <td>3.502</td>
+      <td>3.636</td>
+      <td>3.368</td>
+      <td>0.899</td>
+      <td>0.809</td>
+      <td>0.264</td>
+      <td>0.727</td>
+      <td>0.168</td>
+      <td>0.109</td>
+      <td>0.526</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>Congo (Kinshasa)</td>
+      <td>Sub-Saharan Africa</td>
+      <td>3.295</td>
+      <td>3.462</td>
+      <td>3.128</td>
+      <td>0.534</td>
+      <td>0.665</td>
+      <td>0.262</td>
+      <td>0.473</td>
+      <td>0.189</td>
+      <td>0.072</td>
+      <td>1.102</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>Nigeria</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.881</td>
+      <td>5.018</td>
+      <td>4.744</td>
+      <td>1.042</td>
+      <td>1.075</td>
+      <td>0.256</td>
+      <td>0.566</td>
+      <td>0.201</td>
+      <td>0.019</td>
+      <td>1.722</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>Sierra Leone</td>
+      <td>Sub-Saharan Africa</td>
+      <td>3.245</td>
+      <td>3.366</td>
+      <td>3.124</td>
+      <td>0.654</td>
+      <td>0.566</td>
+      <td>0.253</td>
+      <td>0.469</td>
+      <td>0.181</td>
+      <td>0.053</td>
+      <td>1.068</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>Botswana</td>
+      <td>Sub-Saharan Africa</td>
+      <td>3.383</td>
+      <td>3.558</td>
+      <td>3.209</td>
+      <td>1.445</td>
+      <td>0.969</td>
+      <td>0.241</td>
+      <td>0.567</td>
+      <td>0.014</td>
+      <td>0.082</td>
+      <td>0.066</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>Guinea</td>
+      <td>Sub-Saharan Africa</td>
+      <td>5.023</td>
+      <td>5.166</td>
+      <td>4.881</td>
+      <td>0.831</td>
+      <td>0.622</td>
+      <td>0.236</td>
+      <td>0.521</td>
+      <td>0.210</td>
+      <td>0.107</td>
+      <td>2.497</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>Zimbabwe</td>
+      <td>Sub-Saharan Africa</td>
+      <td>3.341</td>
+      <td>3.457</td>
+      <td>3.226</td>
+      <td>0.748</td>
+      <td>0.850</td>
+      <td>0.232</td>
+      <td>0.487</td>
+      <td>0.096</td>
+      <td>0.131</td>
+      <td>0.797</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>Chad</td>
+      <td>Sub-Saharan Africa</td>
+      <td>4.471</td>
+      <td>4.630</td>
+      <td>4.313</td>
+      <td>0.603</td>
+      <td>0.805</td>
+      <td>0.199</td>
+      <td>0.411</td>
+      <td>0.218</td>
+      <td>0.113</td>
+      <td>2.122</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>Eswatini</td>
+      <td>Sub-Saharan Africa</td>
+      <td>3.502</td>
+      <td>3.673</td>
+      <td>3.331</td>
+      <td>1.255</td>
+      <td>0.925</td>
+      <td>0.176</td>
+      <td>0.284</td>
+      <td>0.059</td>
+      <td>0.116</td>
+      <td>0.686</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>Mozambique</td>
+      <td>Sub-Saharan Africa</td>
+      <td>5.216</td>
+      <td>5.406</td>
+      <td>5.027</td>
+      <td>0.560</td>
+      <td>0.883</td>
+      <td>0.156</td>
+      <td>0.728</td>
+      <td>0.158</td>
+      <td>0.196</td>
+      <td>2.536</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>Lesotho</td>
+      <td>Sub-Saharan Africa</td>
+      <td>3.186</td>
+      <td>3.469</td>
+      <td>2.904</td>
+      <td>0.771</td>
+      <td>0.851</td>
+      <td>0.000</td>
+      <td>0.523</td>
+      <td>0.082</td>
+      <td>0.085</td>
+      <td>0.875</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scatter plot of Healthy life expectancy vs Log GDP per capita</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">cubehelix_palette</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span><span class="n">rot</span><span class="o">=-</span><span class="mf">.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Log GDP per capita&#39;</span><span class="p">,</span> 
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Healthy life expectancy&#39;</span><span class="p">,</span> 
+    <span class="n">data</span><span class="o">=</span><span class="n">ss_africa</span><span class="p">,</span> 
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Country name&#39;</span><span class="p">,</span> 
+    <span class="n">palette</span><span class="o">=</span> <span class="n">cmap</span><span class="p">,</span> 
+    <span class="n">size</span><span class="o">=</span><span class="s1">&#39;Ladder score&#39;</span><span class="p">,</span>
+    <span class="n">sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span>
+    <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span>
+    <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Healthy life expectancy vs Log GDP per capita in Sub-Saharan Africa&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e215c59722f09d63a16013b06f6320167192ce7e68f9d85fcff3eea632fcfed6.png" src="../_images/e215c59722f09d63a16013b06f6320167192ce7e68f9d85fcff3eea632fcfed6.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01-Demographics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Demographics Analysis and Visualization</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Roy Waswa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

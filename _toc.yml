@@ -5,8 +5,8 @@ parts:
     chapters:
       - file: markdown
       - file: notebooks
-  - caption: Chapter 01 GDP and Population Data
+  - caption: Chapter 01 Demographic Data
     chapters:
-      - file: 01-gdp_population/index
+      - file: 01-Demographics/index
         sections:
-        - file: 01-gdp_population/gdp_rate
+        - file: 01-Demographics/happiness_africa
