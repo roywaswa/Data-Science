@@ -1,0 +1,13 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# ignore all files in the data directories
+**/data/*
+**/exports/*
+**/shp/*
+**/_build/*
+**/rasters/*
+**/renv/*
+

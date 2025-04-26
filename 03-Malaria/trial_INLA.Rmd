@@ -1,0 +1,94 @@
+---
+title: "R-inla"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(sf)
+```
+
+```{r}
+# path to data shp
+mal_2015_path <- "./data/shp/malaria_2015_selected.shp"
+mal_2020_path <- "./data/shp/malaria_2020_selected.shp"
+
+# read in data
+mal_2015 <- st_read(mal_2015_path)
+mal_2020 <- st_read(mal_2020_path)
+read_sf(mal_2015_path)
+```
+
+```{r}
+# list column names
+mal_2015 %>%
+  colnames()
+```
+```{r}
+library(brms)
+```
+
+```{r}
+# ----------------------------------------------------------------------
+# 4. Spatial Model with brms
+# ----------------------------------------------------------------------
+
+# Centering the coordinates, often recommended for numerical stability in spatial models
+brms_data <- mal_2015 %>%
+  mutate(
+    LATNUM_c = LATNUM - mean(LATNUM),
+    LONGNUM_c = LONGNUM - mean(LONGNUM)
+  )
+```
+
+```{r}
+# Define the brms formula
+formula_brms <- bf(
+  parasitaemia_prop ~ 1 +
+    paste(covariate_names, collapse = " + "),
+  # Spatial component using Gaussian process
+  +gp(LATNUM_c, LONGNUM_c,
+    # cov = "exp_quad", # You can choose a different covariance function
+    # The line below is crucial for allowing brms to handle  the zero-inflated beta
+    # family correctly.  It tells brms that the predictors also affect the
+    # probability of a zero.
+    autocor = TRUE
+  ),
+  # Set the distribution.
+  family = zero_inflated_beta()
+)
+```
+
+```{r}
+# Priors (adjust as needed) - VERY IMPORTANT
+priors_brms <- c(
+  prior(normal(0, 1), class = "Intercept"), # Intercept prior
+  prior(normal(0, 0.5), class = "b", coef = all_of(covariate_names)), # Covariate priors
+  prior(exponential(10), class = "sdgp"), # Prior for spatial SD
+  prior(exponential(10), class = "lengthscale"), # Prior for spatial range
+  prior(beta(1, 1), class = "zi") # Prior for zero-inflation parameter.  alpha = 1, beta = 1 is uniform.
+)
+
+# Fit the model with brms
+#   Use a reasonable number of chains and iterations.  Adjust 'cores' as needed.
+brms_model <- brm(
+  formula = formula_brms,
+  data = brms_data,
+  prior = priors_brms,
+  chains = 4,
+  iter = 2000,
+  cores = 4,
+  control = list(
+    adapt_delta = 0.95,
+    max_treedepth = 12
+  ), # Increase these if you get warnings
+  # file = "your_model_file.rds" #Save the model to a file.  Useful for large models.
+)
+
+# Save the model
+saveRDS(brms_model, file = "parasitaemia_model_brms.rds")
+
+# Print a summary of the model
+print(summary(brms_model))
+```
+

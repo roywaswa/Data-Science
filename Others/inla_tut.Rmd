@@ -1,0 +1,115 @@
+---
+title: "Trial INLA Tut"
+author: "Roy Waswa"
+output: html_notebook
+---
+
+# Following a tutorial on INLA
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+if (!require(ggregplot)) devtools::install_github("gfalbery/ggregplot") # Installing Greg's package for plotting functions!
+
+library(INLA)
+library(ggplot2)
+library(ggregplot)
+library(tidyverse)
+library(RColorBrewer)
+library(ggmap)
+library(terra)
+library(sp)
+library(sf)
+```
+
+```{r}
+
+
+Root <- "C:/Users/roywaswa/PROJECTS/Data-Science/03-Malaria/exports" # This should be the path to your working directory
+
+Hosts <- read.csv(paste0(Root, "/malaria_2015_selected.csv"), header = T)
+```
+```{r}
+Hosts %>% names()
+```
+
+```{r}
+library(INLA)
+
+Hosts$ID <- 1:nrow(Hosts)
+
+# Define response and covariates
+resp <- "total_count" # or 'total_count_shch' if you prefer
+covar <- c("URBAN_RURA", "ALT_GPS", "Pop2015", "EVI_15", "Rain15", "Nightligh")
+
+# First model: without random effects
+f0.1 <- as.formula(paste0(resp, " ~ ", paste(covar, collapse = " + ")))
+IM0.1 <- inla(f0.1, family = "nbinomial", data = Hosts)
+
+# Second model: with random effect
+f0.2 <- as.formula(paste0(resp, " ~ ", paste(covar, collapse = " + "), " + f(ID, model = 'iid')"))
+IM0.2 <- inla(f0.2, family = "nbinomial", data = Hosts)
+
+# Summarize results
+summary(IM0.1)
+summary(IM0.2)
+
+```
+```{r}
+Efxplot(list(IM0.1, IM0.2))
+```
+```{r}
+# 7. Now: Stepwise Model Selection (manual version since you don't have INLAModelSel())
+
+# Define a simple model selection function
+INLAModelSel <- function(resp, covar, re_name, re_model, family, data) {
+  removed <- list()
+  
+  current_covars <- covar
+  best_DIC <- Inf
+  
+  repeat {
+    DIC_list <- c()
+    formulas <- list()
+    
+    for (var in current_covars) {
+      trial_covars <- setdiff(current_covars, var)
+      f <- as.formula(paste0(resp, " ~ ", paste(trial_covars, collapse = " + "), 
+                             " + f(", re_name, ", model = '", re_model, "')"))
+      model <- inla(f, family = family, data = data, control.compute = list(dic = TRUE))
+      DIC_list <- c(DIC_list, model$dic$dic)
+      formulas[[length(formulas)+1]] <- trial_covars
+    }
+    
+    if (length(DIC_list) == 0) break
+    
+    min_DIC <- min(DIC_list)
+    if (min_DIC < best_DIC) {
+      best_DIC <- min_DIC
+      best_index <- which.min(DIC_list)
+      current_covars <- formulas[[best_index]]
+      removed[[length(removed) + 1]] <- current_covars
+    } else {
+      break
+    }
+  }
+  
+  return(list(Removed = removed))
+}
+
+# 8. Run Model Selection
+HostModelSel <- INLAModelSel(resp, covar, "ID", "iid", "nbinomial", Hosts)
+
+# 9. Get Final Covariates
+Finalcovar <- HostModelSel$Removed[[length(HostModelSel$Removed)]]
+
+# 10. Final Model with selected covariates
+final_formula <- as.formula(paste0(resp, " ~ ", paste(Finalcovar, collapse = " + "), " + f(ID, model = 'iid')"))
+FinalModel <- inla(final_formula, family = "nbinomial", data = Hosts)
+
+# 11. Summarize final model
+summary(FinalModel)
+```
+
+
+
+

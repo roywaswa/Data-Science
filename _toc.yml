@@ -10,3 +10,6 @@ parts:
       - file: 01-Demographics/index
         sections:
         - file: 01-Demographics/happiness_africa
+  - caption: Chapter 02 Soil Organic Carbon
+    chapters:
+      -file: 02-SOC/datasets
